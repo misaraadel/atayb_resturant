@@ -147,7 +147,7 @@
         .navbar-nav{
             flex-direction: row;
             .nav-item{
-                margin: 0px 10px;
+                margin: 0px 20px;
                 .nav-link{
                     color: #000;
                     font-size: 15px;
@@ -276,6 +276,17 @@ header{
     background-position: bottom !important;
     background-repeat: no-repeat !important;
     background-size: contain !important;
+    z-index: 9;
+    &::after{
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: rgba($color: #fff, $alpha: .7);
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
     .content{
         width: 100%;
         height: 100%;
@@ -309,7 +320,7 @@ header{
             position: absolute;
             width: 100%;
             height: 100%;
-            border: 20px solid #730D3B;
+            border: 20px solid rgba($color: #730D3B , $alpha: .8);
             top: 0;
             left: 0;
             z-index: -1;
@@ -383,11 +394,22 @@ header{
     width: 100%;
     padding: 100px 0px 100px 0px;
     position: relative;
-    background: url('../images/about_top.png') #FDFDFD;
+    background: url('../images/about_top.png') #fff;
     background-position: top !important;
     background-repeat: no-repeat !important;
     background-size: contain !important;
     position: relative;
+    z-index: 8;
+    &::before{
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: rgba($color: #fff, $alpha: .8);
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
     &::after{
         content: '';
         position: absolute;
@@ -400,12 +422,12 @@ header{
         bottom: -100px;
         left: 50px;
         animation: spinner 60s cubic-bezier(0.25, 0.25, 0.75, 0.75) infinite alternate;
-        z-index: 9;
+        z-index: 9 !important;
     }
     .item{
         .image-content{
             position: relative;
-            border: 1px solid #730D3B;
+            border: 1px solid rgba($color: #730D3B, $alpha: .8);
             width: 100%;
             height: 200px;
             display: flex;
@@ -428,6 +450,51 @@ header{
         }
     }
 }
+.category{
+    width: 100%;
+    padding: 50px 0px;
+    background-color: #FDFDFD;
+    .box{
+        width: 100%;
+        padding: 20px 15px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba($color: #730D3B , $alpha: .08);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        text-align: center;
+        transition: all .4s linear;
+        .image-content{
+            img{
+                width: 80px;
+                height: 80px;
+                object-fit: contain;
+                filter: invert(10%) sepia(99%) saturate(2647%) hue-rotate(317deg) brightness(91%) contrast(99%);
+            }
+        }
+        .content{
+            padding-top: 20px;
+            h4{
+                color: #440b25;
+                font-weight: 700;
+                font-size: 20px;
+                margin-bottom: 10px;
+            }
+            p{
+                color:#999;
+                font-size: 14px;
+                font-weight: 500;
+                line-height: 2rem;
+                margin: 0px !important;
+            }
+        }
+        &:hover{
+            transform: translateY(-10px);
+        }
+    }
+}
 .contact-us{
     width: 100%;
     padding: 50px 0px 50px 0px;
@@ -437,6 +504,17 @@ header{
     background-repeat: no-repeat !important;
     background-size: cover !important;
     position: relative;
+    z-index: 7;
+    &::after{
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: rgba($color: #fff, $alpha: .7);
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
     .form{
         .form-group{
             input , select , option , textarea{
@@ -515,7 +593,7 @@ header{
             position: absolute;
             width: 100%;
             height: 100%;
-            border: 20px solid #730D3B;
+            border: 20px solid rgba($color: #730D3B, $alpha: .8);
             top: 0;
             left: 0;
             z-index: -1;
@@ -531,22 +609,10 @@ header{
 footer{
     width: 100%;
     padding: 50px 0px 30px;
-    background-size: cover !important;
-    background-repeat: no-repeat !important;
-    background-position: center !important;
-    background: url(../images/footer.jpg);
+    background-color: #f9f9f9;
     position: relative;
     z-index: 99 !important;
-    &::after{
-        content: '';
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        background-color: rgba($color: #111 , $alpha: .84);
-        top: 0;
-        left: 0;
-        z-index: -1;
-    }
+   
     .content{
         &.center-content{
             width: 100%;
@@ -565,7 +631,7 @@ footer{
             }
         }
         p{
-            color: #f9f9f9;
+            color: #888;
             line-height: 2rem;
             font-size: 15px;
             margin: 20px 0px;
@@ -585,7 +651,7 @@ footer{
                 align-items: center;
                 display: flex;
                 border-radius: 50%;
-                background-color: #f9f9f9;
+                border: 1px solid #730D3B;
                 transition: all .5s linear;
                 margin: 0px 5px;
                 i{
@@ -605,7 +671,7 @@ footer{
         }
         h4{
             font-size: 19px;
-            color: #fff;
+            color: #730D3B;
             font-weight: 700;
             margin: 50px 0px;
         }
@@ -617,7 +683,7 @@ footer{
                 margin: 20px 0px;
                 a{
                     padding: 0px 20px;
-                    color: #f9f9f9;
+                    color: #888;
                     font-size: 15px;
                    font-weight: 500;
                     position: relative;
@@ -641,10 +707,13 @@ footer{
 .copyrights{
     width: 100%;
     text-align: center;
-    padding: 10px 0px;
-    background-color: #111;
+    background-color: #f9f9f9;
     p{
-        color: #fff;
+        border-top: 1px solid #808080;
+        padding: 10px 0px;
+        width: 100%;
+        text-align: center;
+        color: #888;
         margin: 0px;
         font-size: 16px;
         font-weight: 500;

@@ -23,7 +23,7 @@
     font-family: "ExpoArabic" , sans-serif ;
     scroll-behavior: smooth;
     &::selection{
-        background-color: #368B85;
+        background-color: #730D3B;
         color: #fff; 
     }
     &::-webkit-scrollbar {
@@ -33,11 +33,11 @@
         background-color: #ccc;
     }
     &::-webkit-scrollbar-thumb {
-        background: #368B85; 
+        background: #730D3B; 
         border-radius: 8px;
     }
     &::-webkit-scrollbar-thumb:hover {
-        background: #FFD371; 
+        background: #730D3B; 
     }
 }
 .overflowNone{
@@ -61,16 +61,37 @@ ul{
     padding: 0px;
 }
 .owl-theme .owl-dots .owl-dot span{
-    width: 20px;
-    height: 4px;
+    width: 30px;
+    height: 2px;
     border-radius: 4px;
-    background-color: #FFD371;
+    background-color: #730D3B;
     opacity: .5;
     transition: all .5s linear;
 }
 .owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span{
     opacity: 1;
+    background-color: #730D3B;
 }
 .overflowNone{
     overflow: hidden;
+}
+.scroll-top-btn{
+    width: 40px;
+    height: 40px;
+    background-color: #730D3B;
+    border-radius: 20px;
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    z-index: 998;
+    img{
+        width: 50%;
+        height: 50%;
+        object-fit: contain;
+        filter: invert(90%) sepia(92%) saturate(28%) hue-rotate(202deg) brightness(108%) contrast(100%);
+    }
 }

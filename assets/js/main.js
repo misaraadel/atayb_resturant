@@ -28,14 +28,14 @@ $(document).ready(function () {
     });
     wow.init();
     //start active navbar
-    $('.nav-button').click(function(){
-        $('.mobile-nav').addClass('active-nav');
-    });
-    $('.mobile-close').click(function(){
-        $('.mobile-nav').removeClass('active-nav');
+    $('.nav-toggler').click(function(){
+        $('.nav-toggler').toggleClass('active');
+        $('.navbar-nav').toggleClass('acitve-nav');
+        $('body').toggleClass('overflowNone')
     });
     //owl header screen 
     $('.owl-header').owlCarousel({
+        rtl: true,
         loop:true,
         margin: 20,
         nav:false,
@@ -54,8 +54,39 @@ $(document).ready(function () {
         autoplayHoverPause: true,
         items:1
     });
-    //partner slider 
-    $('.owl-partner').owlCarousel({
+    //list slider 
+    $('.owl-list').owlCarousel({
+        rtl: true,
+        loop:false,
+        margin: 20,
+        nav:false,
+        dots: true,
+        autoplay: true,
+        touchDrag  : true,
+		mouseDrag  : true,
+		autoWidth: false,
+		animateOut: 'fadeOut',
+        animateIn: 'fadeIn',
+        autoplayTimeout: 6000,
+		smartSpeed: 2000,
+		dragEndSpeed: 2000,
+		slidSpeed: 900,
+        paginationSpeed: 900,
+        autoplayHoverPause: true,
+        responsive:{
+            0:{
+                items:1
+            },
+            600:{
+                items:2
+            },
+            1000:{
+                items:4
+            }
+        }
+    });
+    //owl gallery
+    $('.owl-gallery').owlCarousel({
         rtl: true,
         loop:false,
         margin: 20,
